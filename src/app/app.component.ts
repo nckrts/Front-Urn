@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.displayFrontend.html'
+  templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  title = 'Frontend';
+
+  constructor(
+      public router: Router
+  ) {}
+
 }
+

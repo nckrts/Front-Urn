@@ -2,13 +2,30 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { CadastroraizComponent } from "./cadastroraiz/cadastroraiz.component";
-import { DisplayComponent } from "./display/display.component";
-import { AdicionarComponent } from "./adicionar/adicionar.component";
+import { CadastroraizComponent } from "./modules/siteScreenPrincipal/cadastroraiz.component";
+import { AdicionarComponent } from "./modules/modifyCandidate/adicionar.component";
+import {MainComponent} from "./core/main/main.component";
+import {DisplayComponent} from "./modules/display/display.component";
+import { UserProfileComponent } from "./modules/user-profile/user-profile.component";
+import { ResultVoteComponent } from "./modules/result-vote/result-vote.component";
+
 
 const routes: Routes = [
-    {path:"clicouvotar",component: DisplayComponent},
-    {path:"clicouadicionarCandidato",component: AdicionarComponent}
+
+    {
+        path: '',
+        component: MainComponent,
+        children: [
+            {path: '', redirectTo: "menuPrincipal", pathMatch: 'full'},
+            {path:"menuPrincipal",component: CadastroraizComponent},
+            {path:"urna",component: DisplayComponent},
+            {path:"edicaoDeCandidatos",component: AdicionarComponent},
+            {path:"perfil",component: UserProfileComponent},
+            {path:"result", component: ResultVoteComponent}
+        ]
+    },
+
+
 ];
 
 @NgModule({
