@@ -26,7 +26,7 @@ import { ResultVoteComponent } from './modules/result-vote/result-vote.component
     MainComponent,
     MenuComponent,
     UserProfileComponent,
-    ResultVoteComponent
+    ResultVoteComponent,
   ],
   imports: [
     BrowserModule,

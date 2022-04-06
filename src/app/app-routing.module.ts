@@ -8,7 +8,7 @@ import {MainComponent} from "./core/main/main.component";
 import {DisplayComponent} from "./modules/display/display.component";
 import { UserProfileComponent } from "./modules/user-profile/user-profile.component";
 import { ResultVoteComponent } from "./modules/result-vote/result-vote.component";
-
+import {  }
 
 const routes: Routes = [
 

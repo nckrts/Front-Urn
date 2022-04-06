@@ -1,0 +1,13 @@
+<p>selecione o tipo de candidato</p>
+
+<select #selectInput (change)="getList(selectInput.value)" name="select">
+    <option [value]="'1'">presidente </option>
+    <option [value]="'2'">gov </option>
+    <option [value]="'3'">outro </option>
+</select>
+
+
+<div></div>
+<div>
+    <div class="list"></div>
+</div>

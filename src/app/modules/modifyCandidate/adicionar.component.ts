@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { OptionsModifyService } from 'src/app/modules/modifyCandidate/options-modify.service';
 @Component({
   selector: 'app-adicionar',
   templateUrl: './adicionar.component.html',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdicionarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private OptionsModifyService: OptionsModifyService) { }
+
+
+
+ obterTodosCandidatosDepEstadual(){}
+
 
   ngOnInit(): void {
   }
