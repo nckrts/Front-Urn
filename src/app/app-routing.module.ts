@@ -9,6 +9,8 @@ import {DisplayComponent} from "./modules/display/display.component";
 import { UserProfileComponent } from "./modules/user-profile/user-profile.component";
 import { ResultVoteComponent } from "./modules/result-vote/result-vote.component";
 import { CandidateListComponent } from "./modules/candidate/candidate-list/candidate-list.component";
+import {CandidatePrintAndEditionComponent} from "./modules/candidate/candidate-print-and-edition/candidate-print-and-edition.component";
+
 
 const routes: Routes = [
 
@@ -23,7 +25,7 @@ const routes: Routes = [
            // {path:"aa",component: AdicionarComponent},
             {path:"perfil",component: UserProfileComponent},
             {path:"result", component: ResultVoteComponent},
-
+            {path:"edicao", component: CandidatePrintAndEditionComponent},
         ]
     },
 

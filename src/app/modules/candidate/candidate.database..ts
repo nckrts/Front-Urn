@@ -22,13 +22,17 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})}
     );
   };
-  deputadoEstadualList(returnData){
-    return this.databaseService.get(`${API_PATH}deputado_estadual/mostrar`, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
+  // deputadoEstadualList(returnData){
+  //   return this.databaseService.get(`${API_PATH}deputado_estadual/mostrar`, {})
+  //       .subscribe(
+  //           (response) => {returnData({data: response})},
+  //           (error) => {returnData({error: error})}
+  //       );
+  // };
+    deputadoEstadualList(){
+        return this.databaseService.get(`${API_PATH}/api/deputado_estadual/mostrar`, {})
+            .subscribe(resultado => console.log(resultado));
+    };
   deputadoEstadualDelete(id: number, returnData){
     return this.databaseService.delete(`${API_PATH}deputado_estadual/`+ id, {})
         .subscribe(

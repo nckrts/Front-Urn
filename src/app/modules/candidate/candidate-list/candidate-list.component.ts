@@ -16,18 +16,29 @@ export class CandidateListComponent implements OnInit {
   constructor(
      private router: Router,
      private candidateDatabase: CandidateDatabase,
-  ) {
+  ) {}
+  ngOnInit(): void {}
+
+
+  chamarlistadodeputadoestadual(){
+   this.candidateDatabase.deputadoEstadualList()
+
   }
-
-  ngOnInit(): void {
-
-  }
-
-
 }
-
-
-  // getList(type): void {
+   //     (response) => {
+   //           if (response.data) {
+   //             console.log(response.data);
+   //             this.candidateList = response.data;
+   //           } else {
+   //             this.candidateList = [];
+   //             alert('deu ruim');
+   //               console.log(response.data);
+   //                  }
+   //
+   // })
+   // }
+//}
+  //getList(type): void {
   //
   //   if (type == '1') {
   //     this.candidateDatabase.deputadoEstadualList((response) => {
