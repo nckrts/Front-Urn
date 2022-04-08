@@ -8,23 +8,21 @@ import { CadastroraizComponent } from './modules/siteScreenPrincipal/cadastrorai
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdicionarComponent } from './modules/modifyCandidate/adicionar.component';
 
-
 import { FormsModule }  from  '@angular/forms';
 import { MatFormFieldModule }  from  '@angular/material/form-field';
 import { MatInputModule }  from  '@angular/material/input';
-import { MainComponent } from './core/main/main.component';
-import { MenuComponent } from './core/menu/menu.component';
 import { UserProfileComponent } from './modules/user-profile/user-profile.component';
 import { ResultVoteComponent } from './modules/result-vote/result-vote.component';
+import {CandidateModule} from "./modules/candidate/candidate.module";
+import {CoreModule} from "./core/core.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DisplayComponent,
-    CadastroraizComponent,
     AdicionarComponent,
-    MainComponent,
-    MenuComponent,
+    CadastroraizComponent,
+    DisplayComponent,
     UserProfileComponent,
     ResultVoteComponent,
   ],
@@ -32,11 +30,16 @@ import { ResultVoteComponent } from './modules/result-vote/result-vote.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    CoreModule,
+    CandidateModule,
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CandidateListComponent} from "./candidate-list/candidate-list.component";
+import {MatButtonModule} from "@angular/material/button";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -8,8 +10,10 @@ import {CandidateListComponent} from "./candidate-list/candidate-list.component"
   declarations: [
       CandidateListComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatButtonModule,
+    ]
 })
 export class CandidateModule { }

@@ -24,11 +24,11 @@ export class DatabaseService {
     (tap(res => {}, error => {}));
   }
   post(url: string, param : any){
-    return this.httpClient.delete(url, {params: param}).pipe
+    return this.httpClient.post(url, {params: param}).pipe
     (tap(res => {}, error => {}));
   }
   upgrade(url: string, param : any){
-    return this.httpClient.delete(url, {params: param}).pipe
+    return this.httpClient.put(url, {params: param}).pipe
     (tap(res => {}, error => {}));
   }
 

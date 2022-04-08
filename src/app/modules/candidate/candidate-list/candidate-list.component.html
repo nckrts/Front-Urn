@@ -1,13 +1,29 @@
-<p>selecione o tipo de candidato</p>
+<div class="banner">
+    <div class="form menu trasparent">
+        <p class="text" >Selecione o cargo desejado <br> para proceder com a edição dos dados:</p>
 
-<select #selectInput (change)="getList(selectInput.value)" name="select">
-    <option [value]="'1'">presidente </option>
-    <option [value]="'2'">gov </option>
-    <option [value]="'3'">outro </option>
-</select>
+        <br>
 
+        <button mat-raised-button class="button move" >
+            Dep. Estadual
+        </button>
 
-<div></div>
-<div>
-    <div class="list"></div>
+        <button mat-raised-button class="button move">
+            Dep. Federal
+        </button>
+
+        <button mat-raised-button class="button move">
+            Senador
+        </button>
+
+        <button mat-raised-button class="button move">
+            Governador
+        </button>
+
+        <button mat-raised-button class="button move">
+            Presidente
+        </button>
+        <br>
+        <button [routerLink]="['/menuPrincipal']" class=" move button red redbutton">Voltar</button>
+    </div>
 </div>
