@@ -4,6 +4,7 @@ import {DatabaseService} from "../../core/services/database.service";
 import {CandidateModel} from "./candidate.model";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {CandidateModule} from "./candidate.module";
 
 @Injectable({
   providedIn: 'root'
@@ -46,13 +47,18 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})}
         );
   };
-  deputadoEstadualUpgrade(id:number, returnData){
-    return this.databaseService.put(`${API_PATH}deputado_estadual/editar/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})},
-        );
+
+    deputadoEstadualLer(id:number): Observable<CandidateModel> {
+        const url = `${API_PATH}deputado_estadual/${id}`
+        return this.httpClient.get<CandidateModel>(url)
+    };
+
+  deputadoEstadualUpgrade(candidate: CandidateModel): Observable<CandidateModel>{
+    const url = `${API_PATH}deputado_estadual/editar/${candidate.id}`
+      return this.httpClient.put<CandidateModel>(url, candidate)
   };
+
+
   deputadoEstadualCreate(candidate: CandidateModel): Observable<CandidateModel>{
   return this.httpClient.post<CandidateModel>(`${API_PATH}/api/deputado_estadual/adicionar`, candidate)
         // .subscribe(

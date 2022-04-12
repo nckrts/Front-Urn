@@ -13,6 +13,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import { CandidateUpgradeComponent } from './candidate-upgrade/candidate-upgrade.component';
 
 
 
@@ -22,6 +23,7 @@ import {FormsModule} from "@angular/forms";
       CandidatePrintAndEditionComponent,
       CandidatePrintAndEdition2Component,
       CandidateCreateComponent,
+      CandidateUpgradeComponent,
 
   ],
     imports: [

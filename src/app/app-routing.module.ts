@@ -11,6 +11,7 @@ import { ResultVoteComponent } from "./modules/result-vote/result-vote.component
 import { CandidateListComponent } from "./modules/candidate/candidate-list/candidate-list.component";
 import {CandidatePrintAndEditionComponent} from "./modules/candidate/candidate-print-and-edition/candidate-print-and-edition.component";
 import {CandidateCreateComponent} from "./modules/candidate/candidate-create/candidate-create.component";
+import {CandidateUpgradeComponent} from "./modules/candidate/candidate-upgrade/candidate-upgrade.component";
 
 
 const routes: Routes = [
@@ -20,14 +21,15 @@ const routes: Routes = [
         component: MainComponent,
         children: [
             {path:"menucandidatos", component: CandidateListComponent},
-           // {path: '', redirectTo: "menuPrincipal", pathMatch: 'full'},
+            {path: '', redirectTo: "menuPrincipal", pathMatch: 'full'},
             {path:"menuPrincipal",component: CadastroraizComponent},
             {path:"urna",component: DisplayComponent},
            // {path:"aa",component: AdicionarComponent},
             {path:"perfil",component: UserProfileComponent},
             {path:"result", component: ResultVoteComponent},
             {path:"edicao", component: CandidatePrintAndEditionComponent},
-            {path:"criar", component: CandidateCreateComponent}
+            {path:"criar", component: CandidateCreateComponent},
+            {path:"update/:id", component: CandidateUpgradeComponent}
         ]
     },
 

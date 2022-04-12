@@ -28,8 +28,8 @@ export class DatabaseService {
     return this.httpClient.post(url, {params: param}).pipe
     (tap(res => {}, error => {}));
   }
-  upgrade(url: string, param : any){
-    return this.httpClient.put(url, {params: param}).pipe
+  upgrade(id: string, param : any){
+    return this.httpClient.put(id, {params: param}).pipe
     (tap(res => {}, error => {}));
   }
 

@@ -11,7 +11,7 @@ import {subscribeOn} from "rxjs";
 export class CandidatePrintAndEditionComponent implements OnInit {
 
   public candidateList: object[] = [];
-  displayedColumns = ['id', 'nome', 'partido' , 'numero' , 'votos'];
+  displayedColumns = ['id', 'image','nome', 'partido' , 'numero' , 'votos', 'action'];
 
   constructor(
       private router: Router,

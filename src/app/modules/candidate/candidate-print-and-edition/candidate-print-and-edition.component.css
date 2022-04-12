@@ -27,8 +27,16 @@
     }
 
 }
+.edit{
+    margin-right: 10px;
+}
+ .edit > i{
+     color: yellow;
+ }
 
-
+.delete > i{
+     color: #FF0000;
+ }
 
 table{
     margin-top: 10px;

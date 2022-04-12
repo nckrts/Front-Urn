@@ -10,7 +10,7 @@ import {CandidateModel} from "../candidate.model";
 })
 export class CandidateCreateComponent implements OnInit {
 
-  candidato: CandidateModel = {
+ public candidato: CandidateModel = {
     nome: '',
     partido: '',
     numero: '',
