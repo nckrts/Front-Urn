@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import {API_PATH} from "../../../environments/environment";
 import {DatabaseService} from "../../core/services/database.service";
+import {CandidateModel} from "./candidate.model";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CandidateDatabase {
 
-
-  constructor(
-      private databaseService: DatabaseService
+    constructor(
+      private databaseService: DatabaseService,
+      private httpClient: HttpClient
   ) {
 
   }
@@ -22,17 +25,20 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})}
     );
   };
-  // deputadoEstadualList(returnData){
-  //   return this.databaseService.get(`${API_PATH}deputado_estadual/mostrar`, {})
-  //       .subscribe(
-  //           (response) => {returnData({data: response})},
-  //           (error) => {returnData({error: error})}
-  //       );
-  // };
-    deputadoEstadualList(){
-        return this.databaseService.get(`${API_PATH}/api/deputado_estadual/mostrar`, {})
-            .subscribe(resultado => console.log(resultado));
-    };
+
+   deputadoEstadualList(returnData){
+    return this.databaseService.get(`${API_PATH}/api/deputado_estadual/mostrar`, {})
+        .subscribe(
+            (response) => {returnData({data: response})},
+            (error) => {returnData({error: error})}
+        );
+  };
+
+
+    //   deputadoEstadualList(){
+  //       return this.databaseService.get(`${API_PATH}/api/deputado_estadual/mostrar`, {})
+  //           .subscribe(resultado => console.log(resultado));
+  //   };
   deputadoEstadualDelete(id: number, returnData){
     return this.databaseService.delete(`${API_PATH}deputado_estadual/`+ id, {})
         .subscribe(
@@ -47,13 +53,13 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})},
         );
   };
-  deputadoEstadualCreate(id:number, returnData){
-    return this.databaseService.post(`${API_PATH}deputado_estadual/adicionar`, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})},
-        );
-  };
+  deputadoEstadualCreate(candidate: CandidateModel): Observable<CandidateModel>{
+  return this.httpClient.post<CandidateModel>(`${API_PATH}/api/deputado_estadual/adicionar`, candidate)
+        // .subscribe(
+        //     (response) => {returnData({data: response})},
+        //     (error) => {returnData({error: error})},
+        // );
+  }
 
 
   deputadoFederal(id: number, returnData){

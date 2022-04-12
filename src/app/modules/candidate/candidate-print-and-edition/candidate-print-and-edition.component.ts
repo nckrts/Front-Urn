@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CandidateDatabase} from "../candidate.database.";
+import {Router} from "@angular/router";
+import {subscribeOn} from "rxjs";
 
 @Component({
   selector: 'app-candidate-print-and-edition',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatePrintAndEditionComponent implements OnInit {
 
-  constructor() { }
+  public candidateList: object[] = [];
+  displayedColumns = ['id', 'nome', 'partido' , 'numero' , 'votos'];
+
+  constructor(
+      private router: Router,
+      private candidateDatabase: CandidateDatabase,
+  ) {}
 
   ngOnInit(): void {
+    this.candidateDatabase.deputadoEstadualList(response => {
+      this.candidateList = response.data
+    })
   }
 
 }
+

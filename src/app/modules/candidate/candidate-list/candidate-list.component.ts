@@ -21,7 +21,7 @@ export class CandidateListComponent implements OnInit {
 
 
   chamarlistadodeputadoestadual(){
-   this.candidateDatabase.deputadoEstadualList()
+   // this.candidateDatabase.deputadoEstadualList()
 
   }
 }

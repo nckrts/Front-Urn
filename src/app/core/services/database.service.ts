@@ -11,6 +11,7 @@ export class DatabaseService {
       private httpClient: HttpClient
   ) { }
 
+
   get(url: string, param: any){
     return this.httpClient.get(url, {params: param})
         .pipe(tap(res => {},error => {}));

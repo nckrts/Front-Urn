@@ -10,6 +10,7 @@ import { UserProfileComponent } from "./modules/user-profile/user-profile.compon
 import { ResultVoteComponent } from "./modules/result-vote/result-vote.component";
 import { CandidateListComponent } from "./modules/candidate/candidate-list/candidate-list.component";
 import {CandidatePrintAndEditionComponent} from "./modules/candidate/candidate-print-and-edition/candidate-print-and-edition.component";
+import {CandidateCreateComponent} from "./modules/candidate/candidate-create/candidate-create.component";
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
         path: '',
         component: MainComponent,
         children: [
-            {path:"aaaaaa", component: CandidateListComponent},
+            {path:"menucandidatos", component: CandidateListComponent},
            // {path: '', redirectTo: "menuPrincipal", pathMatch: 'full'},
             {path:"menuPrincipal",component: CadastroraizComponent},
             {path:"urna",component: DisplayComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
             {path:"perfil",component: UserProfileComponent},
             {path:"result", component: ResultVoteComponent},
             {path:"edicao", component: CandidatePrintAndEditionComponent},
+            {path:"criar", component: CandidateCreateComponent}
         ]
     },
 
