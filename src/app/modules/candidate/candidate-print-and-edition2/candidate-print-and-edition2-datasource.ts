@@ -7,26 +7,7 @@ import {CandidateModel} from "../candidate.model";
 
 
 const EXAMPLE_DATA: CandidateModel[] = [
-  {id: 1, nome: 'Hydrogen', partido: 'aa', numero:'22', voto:0},
-  {id: 2, nome: 'Helium', partido: 'aa', numero:'22', voto:0},
-  {id: 3, nome: 'Lithium', partido: 'aa', numero:'22', voto:0},
-  {id: 4, nome: 'Beryllium', partido: 'aa', numero:'22', voto:0},
-  {id: 5, nome: 'Boron', partido: 'aa', numero:'22', voto:0},
-  {id: 6, nome: 'Carbon', partido: 'aa', numero:'22', voto:0},
-  {id: 7, nome: 'Nitrogen', partido: 'aa', numero:'22', voto:0},
-  {id: 8, nome: 'Oxygen', partido: 'aa', numero:'22', voto:0},
-  {id: 9, nome: 'Fluorine', partido: 'aa', numero:'22', voto:0},
-  {id: 10, nome: 'Neon', partido: 'aa', numero:'22', voto:0},
-  {id: 11, nome: 'Sodium', partido: 'aa', numero:'22', voto:0},
-  {id: 12, nome: 'Magnesium', partido: 'aa', numero:'22', voto:0},
-  {id: 13, nome: 'Aluminum', partido: 'aa', numero:'22', voto:0},
-  {id: 14, nome: 'Silicon', partido: 'aa', numero:'22', voto:0},
-  {id: 15, nome: 'Phosphorus', partido: 'aa', numero:'22', voto:0},
-  {id: 16, nome: 'Sulfur', partido: 'aa', numero:'22', voto:0},
-  {id: 17, nome: 'Chlorine', partido: 'aa', numero:'22', voto:0},
-  {id: 18, nome: 'Argon', partido: 'aa', numero:'22', voto:0},
-  {id: 19, nome: 'Potassium', partido: 'aa', numero:'22', voto:0},
-  {id: 20, nome: 'Calcium', partido: 'aa', numero:'22', voto:0},
+
 ];
 
 /**

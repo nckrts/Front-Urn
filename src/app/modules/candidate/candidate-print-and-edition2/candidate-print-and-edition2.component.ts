@@ -18,7 +18,7 @@ export class CandidatePrintAndEdition2Component implements AfterViewInit {
   dataSource: CandidatePrintAndEdition2DataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'nome', 'partido' , 'numero' , 'votos'];
+  displayedColumns = ['id', 'ocupacao', 'nome', 'partido' , 'numero' , 'votos'];
 
   constructor() {
     this.dataSource = new CandidatePrintAndEdition2DataSource();

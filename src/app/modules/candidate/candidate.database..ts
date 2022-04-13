@@ -35,11 +35,6 @@ export class CandidateDatabase {
         );
   };
 
-
-    //   deputadoEstadualList(){
-  //       return this.databaseService.get(`${API_PATH}/api/deputado_estadual/mostrar`, {})
-  //           .subscribe(resultado => console.log(resultado));
-  //   };
   deputadoEstadualDelete(id: number, returnData){
     return this.databaseService.delete(`${API_PATH}deputado_estadual/`+ id, {})
         .subscribe(
@@ -48,7 +43,7 @@ export class CandidateDatabase {
         );
   };
 
-    deputadoEstadualLer(id:number): Observable<CandidateModel> {
+    deputadoEstadualLer(id:string): Observable<CandidateModel> {
         const url = `${API_PATH}deputado_estadual/${id}`
         return this.httpClient.get<CandidateModel>(url)
     };
@@ -67,6 +62,7 @@ export class CandidateDatabase {
         // );
   }
 
+  //--------------------------------------------Federal-------------------------------------------
 
   deputadoFederal(id: number, returnData){
     return this.databaseService.get(`${API_PATH}deputado_federa/`+ id, {})
@@ -75,13 +71,13 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})}
         );
   };
-  deputadoFederalList(returnData){
-    return this.databaseService.get(`${API_PATH}deputado_federa/mostrar`, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
+    deputadoFederalList(returnData){
+        return this.databaseService.get(`${API_PATH}/api/deputado_federal/mostrar`, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
   deputadoFederalDelete(id: number, returnData){
     return this.databaseService.delete(`${API_PATH}deputado_federa/`+ id, {})
         .subscribe(
@@ -104,7 +100,10 @@ export class CandidateDatabase {
         );
   };
 
-  governador(id: number, returnData){
+    //--------------------------------------------governador-------------------------------------------
+
+
+    governador(id: number, returnData){
     return this.databaseService.get(`${API_PATH}governadors/`+ id, {})
         .subscribe(
             (response) => {returnData({data: response})},

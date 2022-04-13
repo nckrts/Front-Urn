@@ -19,19 +19,19 @@ export class CandidateUpgradeComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.candidateDatabase.deputadoEstadualLer(Number(id)).subscribe(candidato => {
-      this.candidato = candidato
+    this.candidateDatabase.deputadoEstadualLer(id).subscribe(candidato => {
+      this.candidato = candidato;
     });
   }
 
   updatecandidato(){
 this.candidateDatabase.deputadoEstadualUpgrade(this.candidato).subscribe(()=> {
   alert("Cadastro do candidato atualizado")
-  this.router.navigate(['edicao'])
+ return this.router.navigate(['/edicao']);
 })
   }
   cancel(){
-    this.router.navigate(['edicao'])
+    this.router.navigate(['/edicao']);
   }
 
 }

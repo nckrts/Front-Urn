@@ -7,9 +7,9 @@
         </ng-container>
 <!---->
         <!-- Name Column -->
-        <ng-container matColumnDef="image" class="move mudacor">
-            <th mat-header-cell *matHeaderCellDef >Imagem</th>
-            <td mat-cell *matCellDef="let row">{{row.image}}</td>
+        <ng-container matColumnDef="ocupacao" class="move mudacor">
+            <th mat-header-cell *matHeaderCellDef >Ocupação</th>
+            <td mat-cell *matCellDef="let row">{{row.ocupacao}}</td>
         </ng-container>
 <!---->
         <!-- Name Column -->
@@ -40,11 +40,12 @@
         <ng-container matColumnDef="action" class="move mudacor">
             <th mat-header-cell *matHeaderCellDef >Ações</th>
             <td mat-cell *matCellDef="let row">
-                <a [routerLink]="['/update/{{id}}']" class="edit">
+                <a [routerLink]="['/editar/{{ row.id }}']" class="edit">
                     <i class="material-icons">
                         edit
                     </i>
                 </a>
+
                 <a [routerLink]="['/menucandidatos']" class="delete">
                     <i class="material-icons">
                         delete

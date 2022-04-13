@@ -16,6 +16,7 @@ import { ResultVoteComponent } from './modules/result-vote/result-vote.component
 import {CandidateModule} from "./modules/candidate/candidate.module";
 import {CoreModule} from "./core/core.module";
 import {HttpClientModule} from "@angular/common/http";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule,
     CoreModule,
     CandidateModule,
+    MatTableModule,
   ],
   providers: [
 

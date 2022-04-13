@@ -1,1 +1,44 @@
-<p>aopa</p>
+<div class="epc mat-elevation-z4">
+    <table mat-table [dataSource]="candidateList">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id" class="move mudacor">
+            <th mat-header-cell *matHeaderCellDef >Id</th>
+            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+        <!---->
+        <!-- Name Column -->
+        <ng-container matColumnDef="ocupacao" class="move mudacor">
+            <th mat-header-cell *matHeaderCellDef >Ocupação</th>
+            <td mat-cell *matCellDef="let row">{{row.ocupacao}}</td>
+        </ng-container>
+        <!---->
+        <!-- Name Column -->
+        <ng-container matColumnDef="nome" class="move mudacor">
+            <th mat-header-cell *matHeaderCellDef >Candidato</th>
+            <td mat-cell *matCellDef="let row">{{row.nome}}</td>
+        </ng-container>
+        <!---->
+        <!-- Partido Column -->
+        <ng-container matColumnDef="partido" class="move mudacor">
+            <th mat-header-cell *matHeaderCellDef >Partido</th>
+            <td mat-cell *matCellDef="let row">{{row.partido}}</td>
+        </ng-container>
+        <!---->
+        <!-- Numero Column -->
+        <ng-container matColumnDef="numero" class=" move mudacor">
+            <th mat-header-cell *matHeaderCellDef >Numero</th>
+            <td mat-cell *matCellDef="let row">{{row.numero}}</td>
+        </ng-container>
+        <!---->
+        <!-- Votos Column -->
+        <ng-container matColumnDef="votos" class="move mudacor">
+            <th mat-header-cell *matHeaderCellDef >Votos</th>
+            <td mat-cell *matCellDef="let row">{{row.votos}}</td>
+        </ng-container>
+        <!---->
+
+    </table>
+    <!---->
+</div>
+<button [routerLink]="['/criar']" class="  red greenbutton button move">Criar</button>
+<button [routerLink]="['/menucandidatos']" class=" red redbutton button move">Voltar</button>

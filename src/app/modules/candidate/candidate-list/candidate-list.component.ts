@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./candidate-list.component.css']
 })
 export class CandidateListComponent implements OnInit {
-
+  public recebeOclic: number;
   public candidateList: object[] = [];
 
   constructor(
@@ -20,6 +20,29 @@ export class CandidateListComponent implements OnInit {
   ngOnInit(): void {}
 
 
+
+
+  clicou1(){
+    this.recebeOclic = 1
+    return this.recebeOclic
+
+  }
+  clicou2(){
+    this.recebeOclic = 2
+    return (this.recebeOclic)
+  }
+  clicou3(){
+    this.recebeOclic = 3
+    return (this.recebeOclic)
+  }
+  clicou4(){
+    this.recebeOclic = 4
+    return (this.recebeOclic)
+  }
+  clicou5(){
+    this.recebeOclic = 5
+    return (this.recebeOclic)
+  }
   chamarlistadodeputadoestadual(){
    // this.candidateDatabase.deputadoEstadualList()
 

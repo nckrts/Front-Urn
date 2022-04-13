@@ -37,6 +37,9 @@ import { CandidateUpgradeComponent } from './candidate-upgrade/candidate-upgrade
         MatFormFieldModule,
         MatInputModule,
         FormsModule,
+    ],
+    providers: [
+        CandidateListComponent
     ]
 })
 export class CandidateModule { }
