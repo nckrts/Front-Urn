@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 import {CandidateDatabase} from "../candidate.database.";
@@ -10,6 +10,7 @@ import {CandidateListComponent} from "../candidate-list/candidate-list.component
   styleUrls: ['./candidate-print-and-edition.component.css']
 })
 export class CandidatePrintAndEditionComponent implements OnInit {
+  @Input() teste: string;
 
   public candidateList: object[] = [];
   displayedColumns = ['id', 'ocupacao','nome', 'partido' , 'numero' , 'votos', 'action'];
@@ -21,30 +22,37 @@ export class CandidatePrintAndEditionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+      // this.candidateDatabase.deputadoEstadualList(response => {
+      //     this.candidateList = response.data
+      // });
+      // this.candidateDatabase.deputadoFederalList(response => {
+      //     this.candidateList = this.candidateList + response.data
+      // });
+      //
     // this.candidateDatabase.deputadoEstadualList(response => {
     //   this.candidateList = response.data
     // })
-      console.log(this.candidateListComponent.recebeOclic)
-   switch (this.candidateListComponent.recebeOclic){
+      console.log(this.teste)
 
-     case 1:{
-        //this.candidateListComponent.recebeOclic = 0;
-        //  this.candidateDatabase.deputadoEstadualList(response => {
-        //    this.candidateList = response.data
-     // })
-         return console.log("entrou aki")
-
-        break;
-     }
-
-     case 2:{
-         this.candidateListComponent.recebeOclic = 0;
-       this.candidateDatabase.deputadoFederalList(response => {
-         this.candidateList = response.data
-       })
-       break;
-     }
-   }
+   // switch (this.candidateListComponent.recebeOclic){
+   //
+   //   case '1':{
+   //      this.candidateListComponent.recebeOclic = '0';
+   //       this.candidateDatabase.deputadoEstadualList(response => {
+   //         this.candidateList = response.data
+   //   })
+   //       return console.log("entrou aki")
+   //   }
+   //
+   //   case '2':{
+   //       this.candidateListComponent.recebeOclic = '0';
+   //     this.candidateDatabase.deputadoFederalList(response => {
+   //       this.candidateList = response.data
+   //     })
+   //     break;
+   //   }
+   // }
   }
 }
 

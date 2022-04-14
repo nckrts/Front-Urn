@@ -10,8 +10,10 @@ export class AdicionarComponent implements OnInit {
   constructor(private OptionsModifyService: OptionsModifyService) { }
 
 
+    obterTodosCandidatosDepEstadual(){}
 
- obterTodosCandidatosDepEstadual(){}
+
+
 
 
   ngOnInit(): void {

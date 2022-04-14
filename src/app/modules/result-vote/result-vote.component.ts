@@ -24,6 +24,9 @@ export class ResultVoteComponent implements OnInit {
     this.candidateDatabase.deputadoEstadualList(response => {
       this.candidateList = response.data
     });
+    this.candidateDatabase.deputadoFederalList(response => {
+      this.candidateList = this.candidateList + response.data
+    });
 
   //   this.candidateDatabase.deputadoFederalList(response => {
   //     this.candidateList = response.data

@@ -110,13 +110,13 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})}
         );
   };
-  governadorList(returnData){
-    return this.databaseService.get(`${API_PATH}governadors/mostrar`, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
+    governadorList(returnData){
+        return this.databaseService.get(`${API_PATH}/api/governadors/mostrar`, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
   governadorDelete(id: number, returnData){
     return this.databaseService.delete(`${API_PATH}governadors/`+ id, {})
         .subscribe(
@@ -146,13 +146,16 @@ export class CandidateDatabase {
                 (error) => {returnData({error: error})}
             );
     };
-  senadorList(returnData){
-        return this.databaseService.get(`${API_PATH}senadors/mostrar`, {})
+
+    senadorList(returnData){
+        return this.databaseService.get(`${API_PATH}/api/senadors/mostrar`, {})
             .subscribe(
                 (response) => {returnData({data: response})},
                 (error) => {returnData({error: error})}
             );
     };
+
+
   senadorDelete(id: number, returnData){
         return this.databaseService.delete(`${API_PATH}senadors/`+ id, {})
             .subscribe(
@@ -182,13 +185,16 @@ export class CandidateDatabase {
                 (error) => {returnData({error: error})}
             );
     };
+
+
   presidenteList(returnData){
-        return this.databaseService.get(`${API_PATH}presidente/mostrar`, {})
+        return this.databaseService.get(`${API_PATH}/api/presidente/mostrar`, {})
             .subscribe(
                 (response) => {returnData({data: response})},
                 (error) => {returnData({error: error})}
             );
     };
+
   presidenteDelete(id: number, returnData){
         return this.databaseService.delete(`${API_PATH}presidente/`+ id, {})
             .subscribe(

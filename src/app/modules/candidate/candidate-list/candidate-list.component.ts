@@ -10,44 +10,58 @@ import {Router} from "@angular/router";
   styleUrls: ['./candidate-list.component.css']
 })
 export class CandidateListComponent implements OnInit {
-  public recebeOclic: number;
+  public recebeOclic: string = '';
   public candidateList: object[] = [];
 
   constructor(
-     private router: Router,
-     private candidateDatabase: CandidateDatabase,
-  ) {}
-  ngOnInit(): void {}
+      private router: Router,
+      private candidateDatabase: CandidateDatabase,
+  ) {
+  }
+
+  ngOnInit(): void {
+  }
 
 
-
-
-  clicou1(){
-    this.recebeOclic = 1
-    return this.recebeOclic
+  setDisplayInser(value: string): void {
+    this.recebeOclic = value;
 
   }
-  clicou2(){
-    this.recebeOclic = 2
-    return (this.recebeOclic)
-  }
-  clicou3(){
-    this.recebeOclic = 3
-    return (this.recebeOclic)
-  }
-  clicou4(){
-    this.recebeOclic = 4
-    return (this.recebeOclic)
-  }
-  clicou5(){
-    this.recebeOclic = 5
-    return (this.recebeOclic)
-  }
-  chamarlistadodeputadoestadual(){
-   // this.candidateDatabase.deputadoEstadualList()
 
-  }
+// verificationOnInser():void {
+//   switch(this.recebeOclic)
+// {
+// case'1':
+//
+// }
+// }
 }
+//   clicou1(){
+//     this.recebeOclic = 1
+//     return this.recebeOclic
+//
+//   }
+//   clicou2(){
+//     this.recebeOclic = 2
+//     return (this.recebeOclic)
+//   }
+//   clicou3(){
+//     this.recebeOclic = 3
+//     return (this.recebeOclic)
+//   }
+//   clicou4(){
+//     this.recebeOclic = 4
+//     return (this.recebeOclic)
+//   }
+//   clicou5(){
+//     this.recebeOclic = 5
+//     return (this.recebeOclic)
+//   }
+//   chamarlistadodeputadoestadual(){
+//    // this.candidateDatabase.deputadoEstadualList()
+//
+//   }
+// }
    //     (response) => {
    //           if (response.data) {
    //             console.log(response.data);

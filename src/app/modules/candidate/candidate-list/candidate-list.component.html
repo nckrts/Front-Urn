@@ -4,26 +4,30 @@
 
         <br>
 
-        <button [routerLink]="['/edicao']" mat-raised-button class="button move" (click)="clicou1()">
+        <button [routerLink]="['/edicao']" mat-raised-button class="button move" (click)="setDisplayInser('1')">
             Dep. Estadual
         </button>
 
-        <button mat-raised-button class="button move" (click)="clicou2()">
+        <button mat-raised-button class="button move">
             Dep. Federal
         </button>
 
-        <button mat-raised-button class="button move" (click)="clicou3()">
+        <button mat-raised-button class="button move">
             Senador
         </button>
 
-        <button mat-raised-button class="button move" (click)="clicou4()">
+        <button mat-raised-button class="button move">
             Governador
         </button>
 
-        <button mat-raised-button class="button move" (click)="clicou5()">
+        <button mat-raised-button class="button move">
             Presidente
         </button>
         <br>
         <button [routerLink]="['/menuPrincipal']" class=" move button red redbutton">Voltar</button>
     </div>
 </div>
+
+<app-candidate-print-and-edition
+    [teste]="recebeOclic"
+></app-candidate-print-and-edition>

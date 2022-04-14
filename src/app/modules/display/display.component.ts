@@ -9,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class DisplayComponent implements OnInit {
 
+  public recebeAsOcupacaoe: object = ['DEPESTADUAL','DEPFEDERAL','GOVERNADOR','SENADOR','PRESIDENTE']
+
+
   constructor() { }
 
   ngOnInit(): void {
