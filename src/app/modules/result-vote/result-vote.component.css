@@ -1,39 +1,37 @@
-.move {
-    animation-name: move;
-    animation-duration: 500ms;
-    animation-fill-mode: backwards;
-    animation-delay: 250ms;
-}
 
-@keyframes fade {
-    from{
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
+td{
+    margin-right:  30px;
 
 }
-@keyframes move {
-    from{
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0%);
-    }
+th{
 
-}
-.edit{
-    margin-right: 10px;
-}
-.edit > i{
-    color: yellow;
+    font-size: 25px;
+    display: block;
+    margin-top: 15px;
 }
 
+.prn{
+    border-style: solid;
+    border-color: #555555;
+}
+
+li {
+    color: black;
+    margin: 5px;
+    display: inline-block;
+
+}
+
+li.princ {
+    font-family: Tahoma;
+    font-size: 25px;
+}
+
+table{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
 .delete > i{
     color: #FF0000;
 }

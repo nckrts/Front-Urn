@@ -8,26 +8,22 @@
             Dep. Estadual
         </button>
 
-        <button mat-raised-button class="button move">
+        <button [routerLink]="['/edicao']" mat-raised-button class="button move"  (click)="setDisplayInser('2')">
             Dep. Federal
         </button>
 
-        <button mat-raised-button class="button move">
+        <button [routerLink]="['/edicao']" mat-raised-button class="button move"  (click)="setDisplayInser('3')">
             Senador
         </button>
 
-        <button mat-raised-button class="button move">
+        <button [routerLink]="['/edicao']" mat-raised-button class="button move"  (click)="setDisplayInser('4')">
             Governador
         </button>
 
-        <button mat-raised-button class="button move">
+        <button [routerLink]="['/edicao']" mat-raised-button class="button move"  (click)="setDisplayInser('5')">
             Presidente
         </button>
         <br>
         <button [routerLink]="['/menuPrincipal']" class=" move button red redbutton">Voltar</button>
     </div>
 </div>
-
-<app-candidate-print-and-edition
-    [teste]="recebeOclic"
-></app-candidate-print-and-edition>

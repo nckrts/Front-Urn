@@ -25,9 +25,9 @@ export class CandidateListComponent implements OnInit {
 
   setDisplayInser(value: string): void {
     this.recebeOclic = value;
-
+    localStorage.setItem("BD", JSON.stringify(this.recebeOclic));
   }
-
+}
 // verificationOnInser():void {
 //   switch(this.recebeOclic)
 // {
@@ -35,7 +35,6 @@ export class CandidateListComponent implements OnInit {
 //
 // }
 // }
-}
 //   clicou1(){
 //     this.recebeOclic = 1
 //     return this.recebeOclic

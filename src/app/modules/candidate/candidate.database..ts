@@ -92,12 +92,9 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})},
         );
   };
-  deputadoFederalCreate(id:number, returnData){
-    return this.databaseService.post(`${API_PATH}deputado_federa/adicionar`, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})},
-        );
+    deputadoFederalCreate(candidate: CandidateModel): Observable<CandidateModel>{
+        return this.httpClient.post<CandidateModel>(`${API_PATH}/api/deputado_federa/adicionar`, candidate)
+
   };
 
     //--------------------------------------------governador-------------------------------------------
@@ -131,13 +128,13 @@ export class CandidateDatabase {
             (error) => {returnData({error: error})},
         );
   };
-  governadorCreate(id:number, returnData){
-    return this.databaseService.post(`${API_PATH}governadors/adicionar`, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})},
-        );
-  };
+    governadorCreate(candidate: CandidateModel): Observable<CandidateModel>{
+        return this.httpClient.post<CandidateModel>(`${API_PATH}/api/governadors/adicionar`, candidate)
+    };
+
+
+    //----------------------------------------Governador----------------------------
+
 
   senador(id: number, returnData){
         return this.databaseService.get(`${API_PATH}senadors/`+ id, {})
@@ -163,20 +160,21 @@ export class CandidateDatabase {
                 (error) => {returnData({error: error})}
             );
     };
-  senadorUpgrade(id:number, returnData){
+   senadorUpgrade(id:number, returnData){
         return this.databaseService.put(`${API_PATH}senadors/editar/`+ id, {})
             .subscribe(
                 (response) => {returnData({data: response})},
                 (error) => {returnData({error: error})},
             );
     };
-  senadorCreate(id:number, returnData){
-        return this.databaseService.post(`${API_PATH}senadors/adicionar`, {})
-            .subscribe(
-                (response) => {returnData({data: response})},
-                (error) => {returnData({error: error})},
-            );
+
+    senadorCreate(candidate: CandidateModel): Observable<CandidateModel>{
+        return this.httpClient.post<CandidateModel>(`${API_PATH}/api/senadors/adicionar`, candidate)
     };
+
+
+    // ------------------------------------------Presidente--------------------
+
 
   presidente(id: number, returnData){
         return this.databaseService.get(`${API_PATH}presidente/`+ id, {})
@@ -209,13 +207,9 @@ export class CandidateDatabase {
                 (error) => {returnData({error: error})},
             );
     };
-  presidenteCreate(id:number, returnData){
-        return this.databaseService.post(`${API_PATH}presidente/adicionar`, {})
-            .subscribe(
-                (response) => {returnData({data: response})},
-                (error) => {returnData({error: error})},
-            );
-    };
 
+    presidenteCreate(candidate: CandidateModel): Observable<CandidateModel>{
+        return this.httpClient.post<CandidateModel>(`${API_PATH}/api/presidente/adicionar`, candidate)
+    };
 
 }

@@ -11,7 +11,10 @@ export class DisplayComponent implements OnInit {
 
   public recebeAsOcupacaoe: object = ['DEPESTADUAL','DEPFEDERAL','GOVERNADOR','SENADOR','PRESIDENTE']
 
-
+inserir(){}
+  votar(){}
+  branco(){}
+  corrige(){}
   constructor() { }
 
   ngOnInit(): void {

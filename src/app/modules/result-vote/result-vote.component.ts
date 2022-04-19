@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {CandidateDatabase} from "../candidate/candidate.database.";
+import {CandidateModel} from "../candidate/candidate.model";
 
 @Component({
   selector: 'app-result-vote',
@@ -9,8 +10,19 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
 })
 
 export class ResultVoteComponent implements OnInit {
+  public candidato: CandidateModel = {
+    nome: '',
+    partido: '',
+    numero: '',
+    image: ''
+  }
+  public candidateList: object[];
+  public deputadofedList: object[];
+  public governadorList: object[];
+  public senadorList: object[];
+  public presidenteList: object[];
 
-  public candidateList: object[] = [];
+
   displayedColumns = ['id', 'ocupacao', 'nome', 'partido' , 'numero' , 'votos'];
 
   constructor(
@@ -25,12 +37,17 @@ export class ResultVoteComponent implements OnInit {
       this.candidateList = response.data
     });
     this.candidateDatabase.deputadoFederalList(response => {
-      this.candidateList = this.candidateList + response.data
+      this.deputadofedList = response.data
     });
-
-  //   this.candidateDatabase.deputadoFederalList(response => {
-  //     this.candidateList = response.data
-  //   })
+    this.candidateDatabase.senadorList(response => {
+      this.senadorList = response.data
+    });
+    this.candidateDatabase.governadorList(response => {
+      this.governadorList = response.data
+    });
+    this.candidateDatabase.presidenteList(response => {
+      this.presidenteList = response.data
+    });
    }
 
 }
