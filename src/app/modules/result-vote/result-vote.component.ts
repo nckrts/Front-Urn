@@ -23,7 +23,7 @@ export class ResultVoteComponent implements OnInit {
   public presidenteList: object[];
 
 
-  displayedColumns = ['id', 'ocupacao', 'nome', 'partido' , 'numero' , 'votos'];
+  displayedColumns = ['id', 'nome', 'partido' , 'numero' , 'votos'];
 
   constructor(
       private router: Router,

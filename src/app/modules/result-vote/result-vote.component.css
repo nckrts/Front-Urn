@@ -3,6 +3,15 @@ td{
     margin-right:  30px;
 
 }
+
+a{
+
+    font-family: Impact;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 th{
 
     font-size: 25px;
@@ -14,11 +23,15 @@ th{
     border-style: solid;
     border-color: #555555;
 }
-
+ul{
+    list-style: none;
+}
 li {
+    display: flex;
+    justify-content: space-between;
     color: black;
     margin: 5px;
-    display: inline-block;
+    /*display: inline-block;*/
 
 }
 
@@ -84,4 +97,18 @@ table{
     outline: none;
     border-style: solid;
     border-color: black;
+}
+
+
+ul{ background-color: #ccc;padding: 10px 0;}
+ul li{background-color: #fff;padding: 10px;}
+ul li span{width: 100%}
+ul li span:nth-child(1){max-width: 200px}
+ul li span:nth-child(2){max-width: 50px}
+ul li span:nth-child(3){max-width: 40px}
+ul li span:nth-child(4){max-width: 300px}
+
+initial{
+    background-color: black;
+    text-color: #fff;
 }

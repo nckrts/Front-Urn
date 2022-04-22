@@ -17,6 +17,7 @@ import { CandidateUpgradeComponent } from './candidate-upgrade/candidate-upgrade
 
 
 
+
 @NgModule({
   declarations: [
       CandidateListComponent,
@@ -36,7 +37,7 @@ import { CandidateUpgradeComponent } from './candidate-upgrade/candidate-upgrade
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
-        FormsModule,
+        FormsModule
     ],
     providers: [
         CandidateListComponent

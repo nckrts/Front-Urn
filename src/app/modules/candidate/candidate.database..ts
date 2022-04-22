@@ -7,70 +7,68 @@ import {HttpClient} from "@angular/common/http";
 import {CandidateModule} from "./candidate.module";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CandidateDatabase {
 
+    votos: any
+
     constructor(
-      private databaseService: DatabaseService,
-      private httpClient: HttpClient
-  ) {
+        private databaseService: DatabaseService,
+        private httpClient: HttpClient
+    ) {
 
-  }
+    }
 
 
-  deputadoEstadual(id: number, returnData){
-    return this.databaseService.get(`${API_PATH}deputado_estadual/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-    );
-  };
+    deputadoEstadual(id: number, returnData){
+        return this.databaseService.get(`${API_PATH}/api/deputado_estadual/${id}`, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
 
-   deputadoEstadualList(returnData){
-    return this.databaseService.get(`${API_PATH}/api/deputado_estadual/mostrar`, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
+    deputadoEstadualList(returnData){
+        return this.databaseService.get(`${API_PATH}/api/deputado_estadual/mostrar`, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
 
-  deputadoEstadualDelete(id: number, returnData){
-    return this.databaseService.delete(`${API_PATH}deputado_estadual/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
+    deputadoEstadualDelete(id: number, returnData){
+        return this.databaseService.delete(`${API_PATH}deputado_estadual/`+ id, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
 
     deputadoEstadualLer(id:string): Observable<CandidateModel> {
-        const url = `${API_PATH}deputado_estadual/${id}`
+        const url = `${API_PATH}/api/deputado_estadual/${id}`
         return this.httpClient.get<CandidateModel>(url)
     };
 
-  deputadoEstadualUpgrade(candidate: CandidateModel): Observable<CandidateModel>{
-    const url = `${API_PATH}deputado_estadual/editar/${candidate.id}`
-      return this.httpClient.put<CandidateModel>(url, candidate)
-  };
+    deputadoEstadualUpgrade(candidate: CandidateModel): Observable<CandidateModel> {
+        const url = `${API_PATH}deputado_estadual/editar/${candidate.id}`
+        return this.httpClient.put<CandidateModel>(`${API_PATH}/api/deputado_estadual/editar/${candidate.id}`, candidate)
+    };
 
+    deputadoEstadualCreate(candidate: CandidateModel): Observable<CandidateModel>{
+        return this.httpClient.post<CandidateModel>(`${API_PATH}/api/deputado_estadual/adicionar`, candidate)
 
-  deputadoEstadualCreate(candidate: CandidateModel): Observable<CandidateModel>{
-  return this.httpClient.post<CandidateModel>(`${API_PATH}/api/deputado_estadual/adicionar`, candidate)
-        // .subscribe(
-        //     (response) => {returnData({data: response})},
-        //     (error) => {returnData({error: error})},
-        // );
-  }
+    };
 
-  //--------------------------------------------Federal-------------------------------------------
+    //--------------------------------------------Federal-------------------------------------------
 
-  deputadoFederal(id: number, returnData){
-    return this.databaseService.get(`${API_PATH}deputado_federa/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
+    deputadoFederal(id: number, returnData){
+        return this.databaseService.get(`${API_PATH}/api/deputado_federal/${id}`, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
     deputadoFederalList(returnData){
         return this.databaseService.get(`${API_PATH}/api/deputado_federal/mostrar`, {})
             .subscribe(
@@ -78,35 +76,33 @@ export class CandidateDatabase {
                 (error) => {returnData({error: error})}
             );
     };
-  deputadoFederalDelete(id: number, returnData){
-    return this.databaseService.delete(`${API_PATH}deputado_federa/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
-  deputadoFederalUpgrade(id:number, returnData){
-    return this.databaseService.put(`${API_PATH}deputado_federa/editar/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})},
-        );
-  };
+    deputadoFederalDelete(id: number, returnData){
+        return this.databaseService.delete(`${API_PATH}deputado_federa/`+ id, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
+    deputadoFederalUpgrade(candidate: CandidateModel): Observable<CandidateModel> {
+        const url = `${API_PATH}deputado_federal/editar/${candidate.id}`
+        return this.httpClient.put<CandidateModel>(`${API_PATH}/api/deputado_federal/editar/${candidate.id}`, candidate)
+    };
     deputadoFederalCreate(candidate: CandidateModel): Observable<CandidateModel>{
-        return this.httpClient.post<CandidateModel>(`${API_PATH}/api/deputado_federa/adicionar`, candidate)
+        return this.httpClient.post<CandidateModel>(`${API_PATH}/api/deputado_federal/adicionar`, candidate)
 
-  };
+    };
 
     //--------------------------------------------governador-------------------------------------------
 
 
+
     governador(id: number, returnData){
-    return this.databaseService.get(`${API_PATH}governadors/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
+        return this.databaseService.get(`${API_PATH}/api/governadors/${id}`, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
     governadorList(returnData){
         return this.databaseService.get(`${API_PATH}/api/governadors/mostrar`, {})
             .subscribe(
@@ -114,20 +110,17 @@ export class CandidateDatabase {
                 (error) => {returnData({error: error})}
             );
     };
-  governadorDelete(id: number, returnData){
-    return this.databaseService.delete(`${API_PATH}governadors/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})}
-        );
-  };
-  governadorUpgrade(id:number, returnData){
-    return this.databaseService.put(`${API_PATH}governadors/editar/`+ id, {})
-        .subscribe(
-            (response) => {returnData({data: response})},
-            (error) => {returnData({error: error})},
-        );
-  };
+    governadorDelete(id: number, returnData){
+        return this.databaseService.delete(`${API_PATH}governadors/`+ id, {})
+            .subscribe(
+                (response) => {returnData({data: response})},
+                (error) => {returnData({error: error})}
+            );
+    };
+    governadorUpgrade(candidate: CandidateModel): Observable<CandidateModel> {
+        const url = `${API_PATH}deputado_governadors/editar/${candidate.id}`
+        return this.httpClient.put<CandidateModel>(`${API_PATH}/api/governadors/editar/${candidate.id}`, candidate)
+    };
     governadorCreate(candidate: CandidateModel): Observable<CandidateModel>{
         return this.httpClient.post<CandidateModel>(`${API_PATH}/api/governadors/adicionar`, candidate)
     };
@@ -136,8 +129,9 @@ export class CandidateDatabase {
     //----------------------------------------Governador----------------------------
 
 
-  senador(id: number, returnData){
-        return this.databaseService.get(`${API_PATH}senadors/`+ id, {})
+
+    senador(id: number, returnData){
+        return this.databaseService.get(`${API_PATH}/api/senadors/${id}`, {})
             .subscribe(
                 (response) => {returnData({data: response})},
                 (error) => {returnData({error: error})}
@@ -153,19 +147,17 @@ export class CandidateDatabase {
     };
 
 
-  senadorDelete(id: number, returnData){
+    senadorDelete(id: number, returnData){
         return this.databaseService.delete(`${API_PATH}senadors/`+ id, {})
             .subscribe(
                 (response) => {returnData({data: response})},
                 (error) => {returnData({error: error})}
             );
     };
-   senadorUpgrade(id:number, returnData){
-        return this.databaseService.put(`${API_PATH}senadors/editar/`+ id, {})
-            .subscribe(
-                (response) => {returnData({data: response})},
-                (error) => {returnData({error: error})},
-            );
+
+    senadorUpgrade(candidate: CandidateModel): Observable<CandidateModel> {
+        const url = `${API_PATH}senadors/editar/${candidate.id}`
+        return this.httpClient.put<CandidateModel>(`${API_PATH}/api/senadors/editar/${candidate.id}`, candidate)
     };
 
     senadorCreate(candidate: CandidateModel): Observable<CandidateModel>{
@@ -176,16 +168,15 @@ export class CandidateDatabase {
     // ------------------------------------------Presidente--------------------
 
 
-  presidente(id: number, returnData){
-        return this.databaseService.get(`${API_PATH}presidente/`+ id, {})
+    presidente(id: number, returnData){
+        return this.databaseService.get(`${API_PATH}/api/presidente/${id}`, {})
             .subscribe(
                 (response) => {returnData({data: response})},
                 (error) => {returnData({error: error})}
             );
     };
 
-
-  presidenteList(returnData){
+    presidenteList(returnData){
         return this.databaseService.get(`${API_PATH}/api/presidente/mostrar`, {})
             .subscribe(
                 (response) => {returnData({data: response})},
@@ -193,23 +184,63 @@ export class CandidateDatabase {
             );
     };
 
-  presidenteDelete(id: number, returnData){
+    presidenteDelete(id: number, returnData){
         return this.databaseService.delete(`${API_PATH}presidente/`+ id, {})
             .subscribe(
                 (response) => {returnData({data: response})},
                 (error) => {returnData({error: error})}
             );
     };
-  presidenteUpgrade(id:number, returnData){
-        return this.databaseService.put(`${API_PATH}presidente/editar/`+ id, {})
-            .subscribe(
-                (response) => {returnData({data: response})},
-                (error) => {returnData({error: error})},
-            );
+
+    presidenteUpgrade(candidate: CandidateModel): Observable<CandidateModel> {
+        const url = `${API_PATH}presidente/editar/${candidate.id}`
+        return this.httpClient.put<CandidateModel>(`${API_PATH}/api/presidente/editar/${candidate.id}`, candidate)
     };
 
     presidenteCreate(candidate: CandidateModel): Observable<CandidateModel>{
         return this.httpClient.post<CandidateModel>(`${API_PATH}/api/presidente/adicionar`, candidate)
     };
+
+
+votesforpresidente(id): Observable<any> {
+    return this.databaseService.put(`${API_PATH}/api/presidente/editar/${id}`, this.votos)
+}
+
+    votesforfederal(id): Observable<any> {
+    return this.databaseService.put(`${API_PATH}/api/deputado_federal/editar/${id}`, this.votos)
+}
+
+    votesforestadual(id): Observable<any> {
+    return this.databaseService.put(`${API_PATH}/api/deputado_estadual/editar/${id}`, this.votos)
+}
+
+    votesforsenador(id): Observable<any> {
+
+    return this.databaseService.put(`${API_PATH}/api/senadors/editar/${id}`, this.votos)
+}
+
+    votesforgovernador(id): Observable<any> {
+    return this.databaseService.put(`${API_PATH}/api/governadors/editar/${id}`, this.votos)
+}
+
+    numberofPresident(number): Observable<any> {
+        return this.databaseService.get(`${API_PATH}/api/president/${number}`, [])
+    }
+
+    numberofSenador(number): Observable<any> {
+        return this.databaseService.get(`${API_PATH}/api/senadors/` + number, [])
+    }
+
+    numberofGovernador(number): Observable<any> {
+        return this.databaseService.get(`${API_PATH}/api/governadors/` + number, [])
+    }
+
+    numberofEstadual(number): Observable<any> {
+        return this.databaseService.get(`${API_PATH}/api/deputado_estadual/` + number, [])
+    }
+
+    numberofFederal(number): Observable<any> {
+        return this.databaseService.get(`${API_PATH}/api/deputado_federal/` + number, [])
+    }
 
 }

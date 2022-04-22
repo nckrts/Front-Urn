@@ -1,28 +1,54 @@
-<div class="epc mat-elevation-z4">
-<table >
-    <ng-container class="prn">
-    <li class="princ">Ocupação</li> <li class="princ">Nome</li> <li class="princ">Partido</li> <li class="princ">Votos</li>
-    </ng-container>
-    <br>
-    <ng-container *ngFor="let candidato of candidateList">
-       <li class="front"> {{ candidato['ocupacao'] }}</li> <li class="center">{{ candidato['nome'] }}</li> <li class="centerback">{{ candidato['partido'] }}</li> <li class="back">{{ candidato['votos'] }}</li>
-        <hr>
-    </ng-container>
-    <ng-container *ngFor="let candidato of deputadofedList">
-    <li> {{ candidato['ocupacao'] }}</li> <li>{{ candidato['nome'] }}</li> <li>{{ candidato['partido'] }}</li> <li>{{ candidato['votos'] }}</li>
-    <hr>
-    </ng-container>
-    <ng-container *ngFor="let candidato of senadorList">
-    <li> {{ candidato['ocupacao'] }}</li> <li>{{ candidato['nome'] }}</li> <li>{{ candidato['partido'] }}</li> <li>{{ candidato['votos'] }}</li>
-    <hr>
-    </ng-container>
-    <ng-container *ngFor="let candidato of governadorList">
-    <li> {{ candidato['ocupacao'] }}</li> <li>{{ candidato['nome'] }}</li> <li>{{ candidato['partido'] }}</li> <li>{{ candidato['votos'] }}</li>
-    <hr>
-    </ng-container>
-    <ng-container *ngFor="let candidato of presidenteList">
-    <li> {{ candidato['ocupacao'] }}</li> <li>{{ candidato['nome'] }}</li> <li>{{ candidato['partido'] }}</li> <li>{{ candidato['votos'] }}</li>
-    <hr>
-    </ng-container>
-</table>
-</div>
+<div>
+    <ul class="listOne initial">
+        <li>
+            <span>Nome</span>
+            <span>Partido</span>
+            <span>Numero</span>
+            <span>Votos</span>
+        </li>
+    </ul>
+    <ul class="listOne">
+        <a> Presidente</a>
+        <li *ngFor="let president of presidenteList" class="">
+            <span>{{president['nome']}}</span>
+            <span>{{president['partido']}}</span>
+            <span>{{president['numero']}}</span>
+            <span>{{president['votos']}}</span>
+        </li>
+    </ul>
+    <ul class="listOne">
+        <a> Senador </a>
+        <li *ngFor="let senador of senadorList" class="">
+            <span>{{senador['nome']}}</span>
+            <span>{{senador['partido']}}</span>
+            <span>{{senador['numero']}}</span>
+            <span>{{senador['votos']}}</span>
+        </li>
+    </ul>
+    <ul class="listOne">
+        <a> Governador</a>
+        <li *ngFor="let governador of governadorList" class="">
+            <span>{{governador['nome']}}</span>
+            <span>{{governador['partido']}}</span>
+            <span>{{governador['numero']}}</span>
+            <span>{{governador['votos']}}</span>
+        </li>
+    </ul>
+    <ul class="listOne">
+        <a> Deputado Federal</a>
+        <li *ngFor="let federal of deputadofedList" class="">
+            <span>{{federal['nome']}}</span>
+            <span>{{federal['partido']}}</span>
+            <span>{{federal['numero']}}</span>
+            <span>{{federal['votos']}}</span>
+        </li>
+    </ul>
+    <ul class="listOne">
+        <a> Deputado Estadual</a>
+        <li *ngFor="let estadual of candidateList" class="">
+            <span>{{estadual['nome']}}</span>
+            <span>{{estadual['partido']}}</span>
+            <span>{{estadual['numero']}}</span>
+            <span>{{estadual['votos']}}</span>
+        </li>
+    </ul>
