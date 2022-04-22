@@ -14,7 +14,7 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
   export class DisplayComponent implements OnInit {
 
     keyboard: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-    getNumberOfCandidate: any = '';
+    numberForComparation: any = '';
     votesForcandidate: any = 0
     showInformations: boolean = false
     showNull: boolean = false
@@ -42,11 +42,11 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
     ngOnInit(): void {}
 
     listOfPresident(): void {
-      this.candidateDatabase.numberofPresident(response => {
-        this.candidato = response.data
+      this.candidateDatabase.numberofPresident(this.numberForComparation).subscribe(data => {
+        this.candidato = data
+        console.log(this.candidato)
         if (this.candidato['numero'] == 0) {
           this.showNull = true;
-          this.candidato = {id: 31};
           this.showInformations = false;
         } else {
           this.showInformations = true;
@@ -56,11 +56,11 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
     }
 
     listOfSenador() {
-      this.candidateDatabase.senadorList(response => {
-        this.candidato = response.data
+      this.candidateDatabase.numberofSenador(this.numberForComparation).subscribe(data => {
+        this.candidato = data
+        console.log(this.candidato)
         if (this.candidato['numero'] == 0) {
           this.showNull = true;
-          this.candidato = {id: 31};
           this.showInformations = false;
         } else {
           this.showInformations = true;
@@ -70,8 +70,9 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
     }
 
     listOfGovernador() {
-      this.candidateDatabase.governadorList(response => {
-        this.candidato = response.data
+      this.candidateDatabase.numberofGovernador(this.numberForComparation).subscribe(data => {
+        this.candidato = data
+        console.log(this.candidato)
         if (this.candidato['numero'] == 0) {
           this.showNull = true;
           this.candidato = {id: 31};
@@ -84,11 +85,11 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
     }
 
     listOfstate() {
-      this.candidateDatabase.deputadoEstadualList(response => {
-        this.candidato = response.data
+      this.candidateDatabase.numberofEstadual(this.numberForComparation).subscribe(data => {
+        this.candidato = data
+        console.log(this.candidato)
         if (this.candidato['numero'] == 0) {
           this.showNull = true;
-          this.candidato = {id: 31};
           this.showInformations = false;
         } else {
           this.showInformations = true;
@@ -98,11 +99,11 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
     }
 
     listOfFederal() {
-      this.candidateDatabase.deputadoFederalList(response => {
-        this.candidato = response.data
+      this.candidateDatabase.numberofFederal(this.numberForComparation).subscribe(data => {
+        this.candidato = data
+        console.log(this.candidato)
         if (this.candidato['numero'] == 0) {
           this.showNull = true;
-          this.candidato = {id: 31};
           this.showInformations = false;
         } else {
           this.showInformations = true;
@@ -154,7 +155,7 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
 
         this.actualSquare[this.numberPosition].classList.remove('focus');
 
-        this.getNumberOfCandidate = this.getNumberOfCandidate + keyboards.toString()
+        this.numberForComparation = this.numberForComparation + keyboards.toString()
 
         if (this.numberPosition < this.printNumberPosition[this.currentStage] - 1) {
           this.actualSquare[++this.numberPosition].classList.add('focus');
@@ -190,7 +191,7 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
       this.showNull = false
       this.whiteVote = false
       this.showInformations = false
-      this.getNumberOfCandidate = '';
+      this.numberForComparation = '';
       this.numberPosition = 0
       this.candidato = [];
       for (let square = 0; square < this.printNumberPosition[this.currentStage]; square++) {
@@ -200,7 +201,7 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
     }
 
     buttonwhite() {
-      if (this.getNumberOfCandidate == '') {
+      if (this.numberForComparation == '') {
         this.showInformations = false
         this.showNull = false
         this.whiteVote = true
@@ -219,7 +220,7 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
         switch (this.currentStage) {
           case 0:
             this.candidato = {id: 29}
-            this.votesfederal()
+            this.votesestadual()
             break;
           case 1:
             this.candidato = {id: 12}
@@ -245,10 +246,10 @@ import {CandidateDatabase} from "../candidate/candidate.database.";
         confirmVotes = true
         switch (this.currentStage) {
           case 0:
-            this.votesfederal()
+            this.votesestadual()
             break;
           case 1:
-            this.votesestadual()
+            this.votesfederal()
             break;
           case 2:
             this.votessenador()
