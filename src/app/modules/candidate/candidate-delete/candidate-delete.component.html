@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>Deletar o candidato</mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                   [value]="candidato.nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Partido"
+                   [value]="candidato.partido" name="partido" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Numero"
+                   [value]="candidato.numero" name="numero" disabled>
+        </mat-form-field>
+        <!--        <mat-form-field>-->
+        <!--            <input matInput placeholder="Image"-->
+        <!--                   [(ngModel)]="candidato.image" name="image">-->
+        <!--        </mat-form-field>-->
+    </form>
+
+
+    <button class=" move button red greenbutton" (click)="deletecandidato()">Deletar</button>
+    <button [routerLink]="['/edicao']" class=" move button red redbutton" (click)="cancel()">cancelar</button>
+</mat-card>

@@ -14,6 +14,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import { CandidateUpgradeComponent } from './candidate-upgrade/candidate-upgrade.component';
+import { CandidateDeleteComponent } from './candidate-delete/candidate-delete.component';
 
 
 
@@ -25,6 +26,7 @@ import { CandidateUpgradeComponent } from './candidate-upgrade/candidate-upgrade
       CandidatePrintAndEdition2Component,
       CandidateCreateComponent,
       CandidateUpgradeComponent,
+      CandidateDeleteComponent,
 
   ],
     imports: [

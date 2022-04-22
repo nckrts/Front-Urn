@@ -11,6 +11,7 @@ import { CandidateListComponent } from "./modules/candidate/candidate-list/candi
 import {CandidatePrintAndEditionComponent} from "./modules/candidate/candidate-print-and-edition/candidate-print-and-edition.component";
 import {CandidateCreateComponent} from "./modules/candidate/candidate-create/candidate-create.component";
 import {CandidateUpgradeComponent} from "./modules/candidate/candidate-upgrade/candidate-upgrade.component";
+import {CandidateDeleteComponent} from "./modules/candidate/candidate-delete/candidate-delete.component";
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
             {path:"result", component: ResultVoteComponent},
             {path:"edicao", component: CandidatePrintAndEditionComponent},
             {path:"criar", component: CandidateCreateComponent},
-            {path:"editar/:id", component: CandidateUpgradeComponent}
+            {path:"editar/:id", component: CandidateUpgradeComponent},
+            {path:"deletar/:id", component: CandidateDeleteComponent}
         ]
     },
 
